@@ -57,7 +57,7 @@ namespace GroupTheory
             {
                 return false;
             }
-            return this.ToString().Equals((string) obj);
+            return this == (Coset) obj;
         }
         /// <summary>
         /// Get hash code

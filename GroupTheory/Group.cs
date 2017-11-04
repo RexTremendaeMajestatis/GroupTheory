@@ -72,7 +72,7 @@ namespace GroupTheory
             {
                 return false;
             }
-            return this.ToString().Equals((string) obj);
+            return this == (Group) obj;
         }
 
         /// <summary>

@@ -46,7 +46,7 @@
             {
                 return false;
             }
-            return this.ToString().Equals((string) obj);
+            return this == (Commutator) obj;
         }
         /// <summary>
         /// Get hash code
@@ -65,7 +65,7 @@
         /// <returns></returns>
         public static bool operator ==(Commutator a, Commutator b)
         {
-            return a != null && a.commutatorValue == b.commutatorValue;
+            return a.commutatorValue == b.commutatorValue;
         }
         /// <summary>
         /// Check commutators non-equivalence

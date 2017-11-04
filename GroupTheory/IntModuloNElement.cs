@@ -50,7 +50,7 @@ namespace GroupTheory
             {
                 return false;
             }
-            return this.ToString().Equals((string) obj);
+            return this == (IntModuloNElement) obj;
         }
         /// <summary>
         /// Get integer modulo n element hash code

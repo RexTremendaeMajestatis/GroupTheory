@@ -70,7 +70,7 @@ namespace GroupTheory
             {
                 return false;
             }
-            return this.ToString().Equals((string) obj);
+            return this == (GroupElement) obj;
         }
         /// <summary>
         /// Hash code of group element

@@ -47,7 +47,7 @@ namespace GroupTheory
             {
                 return false;
             }
-            return this.ToString().Equals((string) obj);
+            return this == (CycleGroup) obj;
         }
         /// <summary>
         /// Get cycle group hash code

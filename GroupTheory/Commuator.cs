@@ -77,6 +77,7 @@
         {
             return !(a == b);
         }
+
         /// <summary>
         /// For g find a: g * a = a * g  = e
         /// </summary>

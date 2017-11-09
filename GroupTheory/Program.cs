@@ -82,45 +82,11 @@ namespace GroupTheory
 
             string path = @"C:\Users\pavel\Desktop\out.txt";
             StringBuilder sb = new StringBuilder();
-            GroupElement e = new GroupElement(0, "1");
-            GroupElement me = new GroupElement(0, "-1");
+
             List<GroupElement> group = GenerategGroup();
             Group G = new Group(group);
 
-
-
-            Commutant commutantG = new Commutant(G);
-
-            Console.WriteLine(commutantG);
-
-            foreach (var a in G.Elements)
-            {
-                Console.WriteLine(a + " " + Commutator.ReverseElement(a, G));
-            }
-            List<int> commutatorInts = new List<int>();
-            int k = 1;
-            for (int i = 0; i < G.Elements.Count; i++)
-            {
-                for (int j = 0; j < G.Elements.Count; j++)
-                {
-                    /*if (i == j || G.Elements[i] == e || G.Elements[j] == e || G.Elements[i] == me || G.Elements[j] == me)
-                        commutatorInts.Add(k);*/
-                    if (Commutator.ReverseElement(G.Elements[i], G) == G.Elements[j] || Commutator.ReverseElement(G.Elements[j], G) == G.Elements[i])
-                        commutatorInts.Add(k);
-                    Console.WriteLine(k + new Commutator(G, G.Elements[i], G.Elements[j]).ToString() + "\n");
-                    k++;
-                }
-            }
-
-            foreach (var a in commutatorInts)
-            {
-                Console.WriteLine(a.ToString() + " ");
-            }
-
-            GroupElement zerok = new GroupElement(0, "k");
-            GroupElement twok = new GroupElement(2, "k");
-
-            Console.WriteLine(zerok * twok);
+            Console.WriteLine(group[1].Order);
 
 
             Console.ReadKey();

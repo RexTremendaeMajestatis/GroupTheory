@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GroupTheory
 {
-    class GroupElement
+    class GroupElement: IGroupElement
     {
         private readonly IntModuloNElement b;
         private readonly QuanternionsGroupElement s;
@@ -31,26 +31,37 @@ namespace GroupTheory
             this.b = new IntModuloNElement(b);
             this.s = new QuanternionsGroupElement(s);
         }
+        /// <summary>
+        /// Create empty group element
+        /// </summary>
+        public GroupElement()
+        {
+            this.b = null;
+            this.s = null;
+        }
 
         /// <summary>
         /// Order of group element
         /// </summary>
         /// <param name="g"></param>
         /// <returns></returns>
-        public static int Order(GroupElement g)
+        public int Order
         {
-            GroupElement e = new GroupElement(0, "1");
-            GroupElement temp = g;
-            int i = 1;
-            while (temp != e)
+            get
             {
-                temp *= g;
-                i++;
+                GroupElement e = new GroupElement(0, "1");
+                GroupElement temp = this;
+                int i = 1;
+                while (temp != e)
+                {
+                    temp *= this;
+                    i++;
+                }
+                return i;
             }
-            return i;
         }
-       
-       
+
+
         /// <summary>
         /// String interpretation of group element
         /// </summary>
